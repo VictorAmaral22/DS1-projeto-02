@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use CodeIgniter\Model;
+use App\Models\Console;
+use App\Models\Categoria;
 
 class Items extends Model
 {
@@ -14,6 +16,15 @@ class Items extends Model
     public function get_Items()
     {
         $data=$this->findAll();
+        $console=new Console();
+        $categoria=new Categoria();
+        $c = 0; 
+        foreach($data as $elem) {
+            $data[$c]['nomeConsole'] = $console->get_Item($elem['console'])['nome'];
+            $data[$c]['nomeCategoria'] = $categoria->get_Item($elem['categoria'])['nome'];
+            $c++;
+        }
+        // print_r($data);
         return $data;
     }
     public function get_Item($id)

@@ -18,11 +18,7 @@
     flex-direction: row;
     justify-content: start;
     align-items: center; 
-    /* margin-right: 80px; */
-    /* margin-left: 80px; */
-    /* margin-bottom: 50px; */
     border: 1px solid black;
-    /* background-color: black; */
     text-decoration: none;
     width: 100%;
 }
@@ -92,8 +88,8 @@
                 <div style=" background-image: url('<?php echo $jogo['imagem']?>'); cursor: pointer;" class="game-cover"></div>
                 <div class="column">
                     <p>Nome: <?php echo $jogo['nome']?></p>
-                    <p>Categoria: <?php echo $jogo['categoria']?> </p>
-                    <p>Console: <?php echo $jogo['console']?></p>
+                    <p>Categoria: <?php echo $jogo['nomeCategoria']?> </p>
+                    <p>Console: <?php echo $jogo['nomeConsole']?></p>
                     <!-- <p>descrição:<?php echo $jogo['descricao']?></p> -->
                     <p>Preço: <?php echo $jogo['preco']?></p>
                     <p>Quantidade: <?php echo $jogo['quantidade']?></p>
