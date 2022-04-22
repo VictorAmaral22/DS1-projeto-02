@@ -7,14 +7,21 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Edit Item</title>
 </head>
-<body style='color:white; font-size:20px'>
-    <form action="/postEditProduct" method="post">
+<body style='color:white; font-size:20px'>    
+<form action="/postEditProduct" method="post">
         <input type="hidden" name="id" value=<?php echo "$data[id]";?>>
         Nome:<input type="text" name="nome" value=<?php echo "$data[nome]";?> >
         <br>
-        categoria:<select name="console"><options> </options></select>>
+        categoria:
+        <select name="console">
+            <?php 
+            foreach($categoria as $c) {
+                echo "<option value=$c[id]>$c[nome]</option>";
+            }
+            ?>
+    </select>
         <br>
-        Descrição:<textarea type="text" name="descricao" value=<?php echo "$data[descricao]";?>></textarea>
+        Descrição:<textarea style='height:100px;width:800px' type="text" name="descricao"><?php echo "$data[descricao]";?></textarea>
         <br>
         Preço:<input type="text" name="preco" value=<?php echo "$data[preco]";?>>
         <br>
@@ -22,7 +29,15 @@
         <br>
         imagem:<input type="text" name="imagem" value=<?php echo "$data[imagem]";?>>
         <br>
-        console:<select name="console"><options> </options></select>
+        console:
+        <select name="console">
+            <?php 
+            foreach($console as $c) {
+                    echo "<option value=$c[id]>$c[nome]</option>";
+                }
+            
+            ?>    
+        </select>
         <br>
         <input type="submit" value="Enviar">
     </form>

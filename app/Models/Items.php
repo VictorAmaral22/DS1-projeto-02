@@ -47,16 +47,30 @@ class Items extends Model
     
     public function edit_item($data)
     {   
-        $rules = [
-            'descr' => 'required',
-            'nome' => 'required',
-            'idade' => 'required',
-        ];
+ //       $rules = [
+ //           'descr' => 'required',
+ //           'nome' => 'required',
+ //           'idade' => 'required',
+ //       ];
+ $data=[
+    'id'=>$this->request->getVar('id'),
+    'nome'=>$this->request->getVar('nome'),
+    'preco'=>$this->request->getVar('preco'),
+    'descricao'=>$this->request->getVar('descricao'),
+    'quantidade'=>$this->request->getVar('quantidade'),
+    'console'=>$this->request->getVar('console'),
+    'imagem'=>$this->request->getVar('imagem'),
+    'categoria'=>$this->request->getVar('categoria'),
+];
         $trataeddata=[
             'id'=>$data['id'],
             'nome'=>$data['nome'],
-            'idade'=>$data['idade'],
-            'descr'=>$data['descr']
+            'preco'=>$data['preco'],
+            'descricao'=>$data['descricao'],
+            'quantidade'=>$data['quantidade'],
+            'console'=>$data['console'],
+            'imagem'=>$data['imagem'],
+            'categoria'=>$data['categoria'],
         ];
         $edited=$this->replace($trataeddata);
         if($edited) return true;

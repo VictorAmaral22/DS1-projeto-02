@@ -4,6 +4,10 @@ namespace App\Controllers;
 
 use App\Models\Items;
 
+use App\Models\Console;
+
+use App\Models\Categoria;
+
 class ItemController extends BaseController
 {
     public function showRegisterForm()
@@ -40,8 +44,10 @@ class ItemController extends BaseController
     }
     public function index(){
         $model=new Items();
+        $consoleModel=new Console();
         $data=$model->get_Items();
-        return view('items-show',['data'=>$data]);
+        $console=$consoleModel->get_Items();
+        return view('items-show',['data'=>$data, 'console'=>$console]);
     }
     public function deleteProduct($id)
     {
@@ -52,8 +58,12 @@ class ItemController extends BaseController
     }
     public function getEditProduct($id){
         $model=new Items();
+        $categoriaModel=new Categoria();
+        $categoria=$categoriaModel->get_Items();
+        $consoleModel=new Console();
+        $console=$consoleModel->get_Items();
         $data=$model->get_Item($id);
-        return view('item-edit',['data'=>$data]);
+        return view('item-edit',['data'=>$data, 'console'=>$console, 'categoria'=>$categoria ]);
     }
     public function postEditProduct()
     {
@@ -68,7 +78,7 @@ class ItemController extends BaseController
             'categoria'=>$this->request->getVar('categoria'),
         ];
         $model=new Items();
-        $edited=$model->getEditProducty($data);
+        $edited=$model->edit_item($data);
         if($edited) {
             if (! $this->validate([])) {
                 echo view('items-show', [

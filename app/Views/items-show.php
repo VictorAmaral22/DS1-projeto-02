@@ -3,7 +3,6 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles.css">
     <title>ChurchGames</title>
     <style>
 
@@ -11,14 +10,15 @@
     display: flex;
     flex-direction: column;
     flex: 1;
+    margin-left:10px
 }
 
 .game-container {
+    margin: 15px 0px 15px 0px;
     display: flex;
     flex-direction: row;
     justify-content: start;
     align-items: center; 
-    border: 1px solid black;
     text-decoration: none;
     width: 100%;
 }
@@ -47,40 +47,27 @@
 }
 
     </style>
-<body>
+<body style='margin-left:20px'>
 <header>
     <div id="header-title">
         <h1>ChurchGames</h1>
     </div>
 </header>
-    <h1>Lista dos games disponiveis</h1>
+<main>    
+    <h3>Lista dos games disponiveis</h3>
    <!-- if(user && user.tipo == 1){
         <a href="games/add" >Cadastrar novo jogo</a>
     } -->
-    <div>
-        <p>Filtre os jogos por genero</p>
-        <select name="genero" id="select">
-            <option value='10'>Todos</option>
-            <option value='0'>Ação</option>
-            <option value=1>Aventura</option>
-            <option value=2>Terror</option>
-            <option value=3>Puzzle</option>
-            <option value=4>RPG</option>
-            <option value=5>Corrida</option>
-            <option value=6>Esporte</option>
+    <div style='margin-bottom:20px'>
+        <select name="console">
+            <?php 
+            foreach($console as $c) {
+                    echo "<option value=$c[id]>$c[nome]</option>";
+                }
+            
+            ?>    
         </select>
-        <a id="filter-link" href="">Filtrar</a>
-        <a href="/games" style="margin-left:10px">Limpar</a>
-
-    </div>
-    <div>
-        <p>Ordenar por data</p>
-        <select name="data" id="data">
-            <option value=0>deixa assim</option>
-            <option value=1>Crecente</option>
-            <option value=2>Decrecente</option>
-        </select>
-        <a id="ordenar" href="">Ordenar</a>
+        <a id="ordenar" href="">Filtrar</a>
     </div>
     <div id="flex">
        <?php foreach ($data as $jogo) { ?>
@@ -94,13 +81,10 @@
                     <p>Preço: <?php echo $jogo['preco']?></p>
                     <p>Quantidade: <?php echo $jogo['quantidade']?></p>
                 </div>
+                <?php echo "<a style='margin-right:20px; margin-left:20px' href=/editarProduto/$jogo[id]>Editar</a>"?>
+                <?php echo "<a href=/deletarProduto/$jogo[id]>Remover</a>"?>
             </div>
     <?php } ?>
-
-        <div id="adminOpsions">
-            <a>Alterar</a>
-            <a>Deletar</a>
-        </div>
     </div>
         
     </div>
@@ -119,6 +103,8 @@
             link2.href=rota2;
         }
     </script>
+    </main>
+
 </body>
 
 </html>

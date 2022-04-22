@@ -204,3 +204,67 @@ CRITICAL - 2022-04-22 13:33:57 --> Cannot declare class App\Models\Console, beca
 CRITICAL - 2022-04-22 13:33:57 --> Cannot declare class App\Models\Console, because the name is already in use
 #0 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
 #1 {main}
+CRITICAL - 2022-04-22 15:24:06 --> syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting '-' or identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING)
+#0 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Common.php(1089): CodeIgniter\View\View->render('items-show', Array, true)
+#2 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Controllers/ItemController.php(44): view('items-show', Array)
+#3 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(832): App\Controllers\ItemController->index()
+#4 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ItemController))
+#5 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/aluno/Área de Trabalho/DS1-projeto-02/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Commands/Server/rewrite.php(43): require_once('/home/aluno/\xC3\x81r...')
+#8 {main}
+CRITICAL - 2022-04-22 15:29:23 --> Array to string conversion
+#0 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Views/item-edit.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/home/aluno/\xC3\x81r...', 11, Array)
+#1 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(210): include('/home/aluno/\xC3\x81r...')
+#2 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Common.php(1089): CodeIgniter\View\View->render('item-edit', Array, true)
+#4 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Controllers/ItemController.php(62): view('item-edit', Array)
+#5 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(832): App\Controllers\ItemController->getEditProduct('1')
+#6 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ItemController))
+#7 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/aluno/Área de Trabalho/DS1-projeto-02/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Commands/Server/rewrite.php(43): require_once('/home/aluno/\xC3\x81r...')
+#10 {main}
+CRITICAL - 2022-04-22 15:29:44 --> Array to string conversion
+#0 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Views/item-edit.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Array to string...', '/home/aluno/\xC3\x81r...', 11, Array)
+#1 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(210): include('/home/aluno/\xC3\x81r...')
+#2 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Common.php(1089): CodeIgniter\View\View->render('item-edit', Array, true)
+#4 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Controllers/ItemController.php(62): view('item-edit', Array)
+#5 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(832): App\Controllers\ItemController->getEditProduct('1')
+#6 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ItemController))
+#7 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/aluno/Área de Trabalho/DS1-projeto-02/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Commands/Server/rewrite.php(43): require_once('/home/aluno/\xC3\x81r...')
+#10 {main}
+CRITICAL - 2022-04-22 15:31:11 --> Undefined index: nome
+#0 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Views/item-edit.php(11): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined index...', '/home/aluno/\xC3\x81r...', 11, Array)
+#1 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(210): include('/home/aluno/\xC3\x81r...')
+#2 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Common.php(1089): CodeIgniter\View\View->render('item-edit', Array, true)
+#4 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Controllers/ItemController.php(62): view('item-edit', Array)
+#5 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(832): App\Controllers\ItemController->getEditProduct('1')
+#6 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ItemController))
+#7 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 /home/aluno/Área de Trabalho/DS1-projeto-02/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#9 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Commands/Server/rewrite.php(43): require_once('/home/aluno/\xC3\x81r...')
+#10 {main}
+CRITICAL - 2022-04-22 15:35:15 --> syntax error, unexpected '}', expecting ',' or ';'
+#0 /home/aluno/Área de Trabalho/DS1-projeto-02/system/View/View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#1 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Common.php(1089): CodeIgniter\View\View->render('item-edit', Array, true)
+#2 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Controllers/ItemController.php(62): view('item-edit', Array)
+#3 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(832): App\Controllers\ItemController->getEditProduct('1')
+#4 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ItemController))
+#5 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 /home/aluno/Área de Trabalho/DS1-projeto-02/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#7 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Commands/Server/rewrite.php(43): require_once('/home/aluno/\xC3\x81r...')
+#8 {main}
+CRITICAL - 2022-04-22 15:55:33 --> Undefined variable: console
+#0 /home/aluno/Área de Trabalho/DS1-projeto-02/app/Controllers/ItemController.php(48): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', '/home/aluno/\xC3\x81r...', 48, Array)
+#1 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(832): App\Controllers\ItemController->index()
+#2 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ItemController))
+#3 /home/aluno/Área de Trabalho/DS1-projeto-02/system/CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 /home/aluno/Área de Trabalho/DS1-projeto-02/public/index.php(37): CodeIgniter\CodeIgniter->run()
+#5 /home/aluno/Área de Trabalho/DS1-projeto-02/system/Commands/Server/rewrite.php(43): require_once('/home/aluno/\xC3\x81r...')
+#6 {main}
