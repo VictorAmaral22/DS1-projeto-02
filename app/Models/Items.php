@@ -6,10 +6,10 @@ use CodeIgniter\Model;
 
 class Items extends Model
 {
-    protected $table            = 'items';
+    protected $table            = 'jogo';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['nome','idade','descr'];
+    protected $allowedFields    = ['nome','descricao', 'preco', 'categoria', 'imagem', 'dataregist', 'console', 'quantidade'];
 
     public function get_Items()
     {

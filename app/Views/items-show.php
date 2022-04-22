@@ -6,37 +6,36 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>ChurchGames</title>
     <style>
-        #flex {
+
+#flex {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
 .game-container {
-    position: relative;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: start;
     align-items: center; 
-    margin-right: 80px;
-    margin-left: 80px;
-    margin-bottom: 50px;
+    /* margin-right: 80px; */
+    /* margin-left: 80px; */
+    /* margin-bottom: 50px; */
     border: 1px solid black;
-    background-color: black;
+    /* background-color: black; */
     text-decoration: none;
-    width: 150px;
-    height: 150px;
+    width: 100%;
 }
 
 .game-cover {
     width: 150px;
     height: 150px;
-    margin-bottom: 30px;
     background-position: center;
     background-size: cover;
     transition: all ease 0.2s;
 }
-#row p {
+
+.game-container p {
     color: black;
     font-size: 15px
 }
@@ -44,6 +43,13 @@
 #adminOpsions{
     margin-left: 50px;
 }
+
+.column {
+    display: flex;
+    flex-direction: column;
+    line-height: 0.7px;
+}
+
     </style>
 <body>
 <header>
@@ -81,25 +87,26 @@
         <a id="ordenar" href="">Ordenar</a>
     </div>
     <div id="flex">
-       <?php foreach ($arr as &$valor) { ?>
-            <div id="row">
-            <div style=" background-image: url('<?php echo $valor['image']?>'); cursor: pointer;" id="game-cover-1" class="game-cover">
+       <?php foreach ($data as $jogo) { ?>
+            <div class="game-container">
+                <div style=" background-image: url('<?php echo $jogo['imagem']?>'); cursor: pointer;" class="game-cover"></div>
+                <div class="column">
+                    <p>Nome: <?php echo $jogo['nome']?></p>
+                    <p>Categoria: <?php echo $jogo['categoria']?> </p>
+                    <p>Console: <?php echo $jogo['console']?></p>
+                    <!-- <p>descrição:<?php echo $jogo['descricao']?></p> -->
+                    <p>Preço: <?php echo $jogo['preco']?></p>
+                    <p>Quantidade: <?php echo $jogo['quantidade']?></p>
+                </div>
             </div>
-        <div>
-        <p>Nome: <?php echo $valor['nome']?></p>
-        <p>Categoria: <?php echo $valor['categoria']?> </p>
-        <p>Console: <?php echo $valor['console']?></p>
-        <p>descrição:<?php echo $valor['descricao']?></p>
-        <p>Preço: <?php echo $valor['preco']?></p>
-        <p>Quantidade: <?php echo $valor['quantidade']?></p>
-    </div>
     <?php } ?>
+
         <div id="adminOpsions">
             <a>Alterar</a>
             <a>Deletar</a>
         </div>
     </div>
-        <% } %>
+        
     </div>
 
     <script>
