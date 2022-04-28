@@ -68,6 +68,9 @@
             ?>    
         </select>
         <a id="ordenar" href="">Filtrar</a>
+        <form method="post" action="">
+            <input type='submit' type="text" name='search'>
+        </form>
     </div>
     <div id="flex">
        <?php foreach ($data as $jogo) { ?>

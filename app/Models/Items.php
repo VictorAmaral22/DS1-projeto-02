@@ -27,6 +27,21 @@ class Items extends Model
         // print_r($data);
         return $data;
     }
+    // public function get_Items_Search($keyword)
+    // {
+    //     $data=$this->findAll();
+    //     $data=$this->$data->where("jogo LIKE '%$keyword%'")->get();
+    //     $console=new Console();
+    //     $categoria=new Categoria();
+    //     $c = 0; 
+    //     foreach($data as $elem) {
+    //         $data[$c]['nomeConsole'] = $console->get_Item($elem['console'])['nome'];
+    //         $data[$c]['nomeCategoria'] = $categoria->get_Item($elem['categoria'])['nome'];
+    //         $c++;
+    //     }
+    //     // print_r($data);
+    //     return $data;
+    // }
     public function get_Item($id)
     {
         $data=$this->find($id);

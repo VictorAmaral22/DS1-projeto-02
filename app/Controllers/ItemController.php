@@ -44,8 +44,13 @@ class ItemController extends BaseController
     }
     public function index(){
         $model=new Items();
+        if($this->request->getGet('search')){
+            $search=$this->request->getGet('search');
+            $data=$model->like('name', $search)->getAll();
+        }else {
+            $data=$model->get_Items();
+        }
         $consoleModel=new Console();
-        $data=$model->get_Items();
         $console=$consoleModel->get_Items();
         return view('items-show',['data'=>$data, 'console'=>$console]);
     }
