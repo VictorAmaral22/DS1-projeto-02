@@ -49,22 +49,29 @@
     </style>
 <body style='margin-left:20px'>
 <header>
-    <div id="header-title">
+    <div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
         <h1>ChurchGames</h1>
+        <div style="display: flex; width: 40%; justify-content: space-evenly;">
+            <a href="/">Jogos</a>
+            <a href="/">Usuarios</a>
+            <a href="/">Categorias</a>
+            <a href="/">Consoles</a>
+            <a href="/">Itens</a>
+        </div>
     </div>
 </header>
 <main>    
     <h3>Lista dos games disponiveis</h3>
+    <a href="/adicionarProduto">Adicionar Jogo</a>
    <!-- if(user && user.tipo == 1){
         <a href="games/add" >Cadastrar novo jogo</a>
     } -->
     <div style='margin-bottom:20px'>
         <select name="console">
             <?php 
-            foreach($console as $c) {
-                    echo "<option value=$c[id]>$c[nome]</option>";
-                }
-            
+            // foreach($console as $c) {
+                    // echo "<option value=$c[id]>$c[nome]</option>";
+                // }            
             ?>    
         </select>
         <a id="ordenar" href="">Filtrar</a>

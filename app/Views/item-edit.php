@@ -8,15 +8,20 @@
     <title>Edit Item</title>
 </head>
 <body style='color:white; font-size:20px'>    
-<form action="/postEditProduct" method="post">
-        <input type="hidden" name="id" value=<?php echo "$data[id]";?>>
-        Nome:<input type="text" name="nome" value=<?php echo "$data[nome]";?> >
+<form action="/editarProduto" method="post">
+
+        <input type="hidden" name="id" value='<?php echo "$data[id]";?>'>
+        Nome: <input type="text" name="nome" value='<?php echo "$data[nome]";?>' >
         <br>
         categoria:
-        <select name="console">
+        <select name="categoria">
             <?php 
             foreach($categoria as $c) {
-                echo "<option value=$c[id]>$c[nome]</option>";
+                if($data['categoria'] == $c['id']){
+                    echo "<option value=$c[id] selected>$c[nome]</option>";
+                } else {
+                    echo "<option value=$c[id]>$c[nome]</option>";
+                }
             }
             ?>
     </select>
@@ -33,9 +38,12 @@
         <select name="console">
             <?php 
             foreach($console as $c) {
+                if($data['console'] == $c['id']){
+                    echo "<option value=$c[id] selected>$c[nome]</option>";
+                } else {
                     echo "<option value=$c[id]>$c[nome]</option>";
                 }
-            
+            }            
             ?>    
         </select>
         <br>
