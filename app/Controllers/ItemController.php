@@ -86,9 +86,7 @@ class ItemController extends BaseController
         $edited=$model->edit_item($data);
         if($edited) {
             if (! $this->validate([])) {
-                echo view('items-show', [
-                    'validation' => $this->validator,
-                ]);
+                return redirect('/');
             } else {
                 echo view('welcome_message');
             }

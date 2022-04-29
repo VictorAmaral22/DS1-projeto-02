@@ -69,31 +69,25 @@
     <div style='margin-bottom:20px'>
         <select name="console">
             <?php 
-             foreach($console as $c) {
-                     echo "<option value=$c[id]>$c[nome]</option>";
-                 }            
+            // foreach($console as $c) {
+                    // echo "<option value=$c[id]>$c[nome]</option>";
+                // }            
             ?>    
         </select>
-        <a id="ordenar" href="">Filtrar</a>
-        <form method="post" action="/">
-            <input type="text" name='Pesquisar'>
-            <input type='submit' name='search' value='Pesquisar'>
-        </form>
+        <!-- <form method="post" action="">
+            <input type='submit' type="text" name='search'>
+        </form> -->
     </div>
     <div id="flex">
-       <?php foreach ($data as $jogo) { ?>
+       <?php foreach ($data as $user) { ?>
             <div class="game-container">
-                <div style=" background-image: url('<?php echo $jogo['imagem']?>'); cursor: pointer;" class="game-cover"></div>
                 <div class="column">
-                    <p>Nome: <?php echo $jogo['nome']?></p>
-                    <p>Categoria: <?php echo $jogo['nomeCategoria']?> </p>
-                    <p>Console: <?php echo $jogo['nomeConsole']?></p>
-                    <!-- <p>descrição:<?php echo $jogo['descricao']?></p> -->
-                    <p>Preço: <?php echo $jogo['preco']?></p>
-                    <p>Quantidade: <?php echo $jogo['quantidade']?></p>
+                    <p>Nome: <?php echo $user['nome']?></p>
+                    <p>email: <?php echo $user['email']?></p>
+                    <p>dataregist: <?php echo $user['dataregist']?></p>
                 </div>
-                <?php echo "<a style='margin-right:20px; margin-left:20px' href=/editarProduto/$jogo[id]>Editar</a>"?>
-                <?php echo "<a href=/deletarProduto/$jogo[id]>Remover</a>"?>
+                <?php echo "<a style='margin-right:20px; margin-left:20px' href=/editarProduto/$user[id]>Editar</a>"?>
+                <?php echo "<a href=/deletarProduto/$user[id]>Remover</a>"?>
             </div>
     <?php } ?>
     </div>
