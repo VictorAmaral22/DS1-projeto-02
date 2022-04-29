@@ -30,6 +30,29 @@ class Usuario extends Model
         else return false;
     }
 
+    public function delete_user($id)
+    {
+        $removed=$this->delete(['id'=>$id]);
+        if($removed) return true;
+        else return false;
+    }
+    
+    public function edit_user($data)
+    {   
+        $trataeddata=[
+            'id'=>$data['id'],
+            'nome'=>$data['nome'],
+            'email'=>$data['email'],
+            'senha'=>$data['senha'],
+            'dataregist'=>$data['dataregist'],
+        ];
+        
+        $edited=$this->replace($trataeddata);
+        
+        if($edited) return true;
+        else return false;
+    }
+
     public function user_buy_products($user, $games)
     {   
         $notaModel = new Notafiscal();
