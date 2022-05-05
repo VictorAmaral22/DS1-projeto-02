@@ -41,6 +41,30 @@ $routes->post('/editarProduto', 'ItemController::postEditProduct');
 $routes->get('/deletarProduto/(:any)', 'ItemController::deleteProduct/$1');
 
 
+
+$routes->get('/users', 'UsersController::ViewUsers');
+$routes->get('/users/add', 'UsersController::InsertView');
+$routes->post('/users/add', 'UsersController::Cadastrar');
+$routes->get('/users/edit/(:num)','UsersController::getEditUser/$1');
+$routes->post('/users/edit/(:num)','UsersController::editUser/$1');
+$routes->get('/users/delete/(:num)','UsersController::deleteUser/$1');
+
+
+$routes->get('/categorias','CategoriesController::getAllCategories');
+$routes->get('/categorias/edit/(:num)','CategoriesController::showEditCategoryForm/$1');
+$routes->post('/categorias/edit/(:num)','CategoriesController::editCategory/$1');
+$routes->get('/categorias/delete/(:num)','CategoriesController::deleteCategory/$1');
+$routes->get('/categorias/create','CategoriesController::showCreateCategoryForm');
+$routes->post('/categorias/create','CategoriesController::createCategory');
+
+$routes->get('/consoles','ConsolesController::getAllConsoles');
+$routes->get('/consoles/edit/(:num)','ConsolesController::showEditConsoleForm/$1');
+$routes->post('/consoles/edit/(:num)','ConsolesController::editConsole/$1');
+$routes->get('/consoles/delete/(:num)','ConsolesController::deleteConsole/$1');
+$routes->get('/consoles/create','ConsolesController::showCreateConsoleForm');
+$routes->post('/consoles/create','ConsolesController::createConsole');
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

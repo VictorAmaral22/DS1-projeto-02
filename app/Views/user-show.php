@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChurchGames</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
 
 #flex {
@@ -49,50 +50,45 @@
     </style>
 <body style='margin-left:20px'>
 <header>
-    <div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+<div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
         <h1>ChurchGames</h1>
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
             <a href="/users">Usuarios</a>
-            <a href="/">Categorias</a>
-            <a href="/">Consoles</a>
-            <a href="/">Itens</a>
+            <a href="/categorias">Categorias</a>
+            <a href="/consoles">Consoles</a>
         </div>
-    </div>
+</div>
 </header>
-<main>    
-    <h3>Lista dos games disponiveis</h3>
-    <a href="/adicionarProduto">Adicionar Jogo</a>
-   <!-- if(user && user.tipo == 1){
-        <a href="games/add" >Cadastrar novo jogo</a>
-    } -->
-    <div style='margin-bottom:20px'>
-        <select name="console">
-            <?php 
-            // foreach($console as $c) {
-                    // echo "<option value=$c[id]>$c[nome]</option>";
-                // }            
+<main>   
+    <div style='display:flex'>
+        <p>Adicionar novo</p> 
+        <a href="/users/create" class="link-plus">
+            <img src="/images/plus.png" class="plus-button-img">
+        </a>
+    </div>
+<?php
+                echo "<table>";
+                echo "<tr>";
+                echo "<td>Nome</td>";
+                echo  "<td>Email</td>";
+                echo  "<td>Data de criação</td>";
+                echo  "<td>Editar</td>";
+                echo "<td>Excluir</td>";
+                echo "</tr>";
+                foreach($data as $row){
+                    echo "<tr>";
+                        echo "<td>".$row['nome'].'</td>';
+                        echo "<td>".$row['email'].'</td>';
+                        echo "<td>".$row['dataregist'].'</td>';
+                        echo "<td><a href='/users/edit/$row[id]'><img src=/images/edit.png class=plus-button-img></a></td>";
+                        echo "<td><a href='/users/delete/$row[id]'><img src=/images/minus.png class=plus-button-img></a></td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
             ?>    
-        </select>
-        <!-- <form method="post" action="">
-            <input type='submit' type="text" name='search'>
-        </form> -->
-    </div>
-    <div id="flex">
-       <?php foreach ($data as $user) { ?>
-            <div class="game-container">
-                <div class="column">
-                    <p>Nome: <?php echo $user['nome']?></p>
-                    <p>email: <?php echo $user['email']?></p>
-                    <p>dataregist: <?php echo $user['dataregist']?></p>
-                </div>
-                <?php echo "<a style='margin-right:20px; margin-left:20px' href=/editarProduto/$user[id]>Editar</a>"?>
-                <?php echo "<a href=/deletarProduto/$user[id]>Remover</a>"?>
-            </div>
-    <?php } ?>
-    </div>
-        
-    </div>
+            <br>
+
 
     <script>
         const select=document.getElementById('select');

@@ -46,13 +46,19 @@ class ItemController extends BaseController
         $model=new Items();
         if($this->request->getGet('search')){
             $search=$this->request->getGet('search');
-            $data=$model->like('name', $search)->getAll();
-        }else {
+            $data=$model->like('nome', $search)->get_Items();
+        } else if($this->request->getGet('filter')){
+            $filter=$this->request->getGet('filter');
+            $data=$model->where('console', $filter)->get_Items();
+        }
+        else {
             $data=$model->get_Items();
         }
         $consoleModel=new Console();
         $console=$consoleModel->get_Items();
-        return view('items-show',['data'=>$data, 'console'=>$console]);
+        $categoriaModel=new Categoria();
+        $categoria=$categoriaModel->get_Items();
+        return view('items-show',['data'=>$data, 'console'=>$console, 'categoria'=>$categoria]);
     }
     public function deleteProduct($id)
     {

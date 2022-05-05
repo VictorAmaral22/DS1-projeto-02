@@ -8,7 +8,7 @@
     <title>Edit Item</title>
 </head>
 <body style='color:white; font-size:20px'>    
-<form action="/editarProduto" method="post">
+<form action=<?php echo "/users/edit/$data[id]";?> method="post">
         <input type="hidden" name="id" value='<?php echo "$data[id]";?>'>
         Nome: <input type="text" name="nome" value='<?php echo "$data[nome]";?>' >
         <br>
