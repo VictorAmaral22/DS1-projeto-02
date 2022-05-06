@@ -54,25 +54,29 @@
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
             <a href="/users">Usuarios</a>
-            <a href="/categorias">Categorias</a>
-            <a href="/consoles">Consoles</a>
+            <a href="/categorias/view">Categorias</a>
+            <a href="/consoles/view">Consoles</a>
         </div>
     </div>
 </header>
 <main>    
-   <!-- if(user && user.tipo == 1){
-        <a href="games/add" >Cadastrar novo jogo</a>
-    } -->
+
+    <a href="/adicionarProduto" >Cadastrar novo jogo</a>
+
     <div style='margin-bottom:20px'>
         <form method="get" action="/">
-        <select name="filter">
-            <?php 
-             foreach($console as $c) {
-                     echo "<option value=$c[id]>$c[nome]</option>";
-                 }            
-            ?>    
-        </select>
-        <button id="ordenar" type='submit'>Filtrar</button>
+            <select name="filter">
+                <?php 
+                foreach($console as $c) {
+                    if(isset($_GET['filter']) && $_GET['filter'] == $c['id']){
+                        echo "<option value=$c[id] selected>$c[nome]</option>";
+                    } else {
+                        echo "<option value=$c[id]>$c[nome]</option>";
+                    }
+                }            
+                ?>    
+            </select>
+            <button id="ordenar" type='submit'>Filtrar</button>
         </form>
         <form method="get" action="/">
             <input type="text" name='search'>

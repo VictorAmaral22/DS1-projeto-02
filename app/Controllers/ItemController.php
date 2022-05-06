@@ -16,7 +16,12 @@ class ItemController extends BaseController
     }
     public function InsertView() 
     {
-        return view('items-insert');
+        $consoleModel=new Console();
+        $console=$consoleModel->get_Items();
+        $categoriaModel=new Categoria();
+        $categoria=$categoriaModel->get_Items();
+        
+        return view('items-insert', ['console'=>$console, 'categoria'=>$categoria]);
     }
     public function InsertProduct()
     {
@@ -47,6 +52,9 @@ class ItemController extends BaseController
         } else if($this->request->getGet('filter')){
             $filter=$this->request->getGet('filter');
             $data=$model->where('console', $filter)->get_Items();
+        } else if($this->request->getGet('order')){
+            // $order=$this->request->getGet('order');
+            // $data=$model->where('console', $order)->get_Items();
         }
         else {
             $data=$model->get_Items();

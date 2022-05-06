@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChurchGames</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <style>
 #flex {
     display: flex;
@@ -54,8 +54,8 @@
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
             <a href="/users">Usuarios</a>
-            <a href="/categorias">Categorias</a>
-            <a href="/consoles">Consoles</a>
+            <a href="/categorias/view">Categorias</a>
+            <a href="/consoles/view">Consoles</a>
         </div>
     </div>
 </header>
@@ -80,8 +80,8 @@
                 foreach($data as $row){
                     echo "<tr>";
                         echo "<td>".$row['nome'].'</td>';
-                        echo "<td><a href='/categories/edit/$row[id]'><img src=/images/edit.png class=plus-button-img></a></td>";
-                        echo "<td><a href='/categories/delete/$row[id]'><img src=/images/minus.png class=plus-button-img></a></td>";
+                        echo "<td><a href='/categorias/edit/$row[id]'><img src=/images/edit.png class=plus-button-img></a></td>";
+                        echo "<td><a href='/categorias/delete/$row[id]'><img src=/images/minus.png class=plus-button-img></a></td>";
                     echo "</tr>";
                 }
                 echo "</table>";

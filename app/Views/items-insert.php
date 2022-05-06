@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Inserir Item</title>
 </head>
-<body style='color:white; font-size:20px'>    
+<body style='font-size:20px'>    
     <form action="/adicionarProduto" method="post">
         <input type="hidden" name="id">
         Nome: <input type="text" name="nome" >
