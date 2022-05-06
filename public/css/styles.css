@@ -19,7 +19,7 @@ thead tr{
   }
 body{ 
     font:400 14px 'Calibri','Arial';
-    padding:20px;
+    padding:10px;
   }
   
   blockquote {
@@ -29,3 +29,119 @@ body{
   .plus-button-img {
     width: 30px;
   }
+  .img-search {
+    width: 60px;
+    height: 60px;
+    rotate: 90deg;
+  }
+
+#flex {
+  display: flex;
+  flex-direction:row;
+  justify-content: flex-start;
+  flex-wrap:wrap;
+  flex: 1;
+  margin-left:10px
+}
+
+.game-container {
+  margin: 15px 30px 15px 0px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap:'wrap';
+  justify-content: center;
+  align-items: center; 
+  text-decoration: none;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 0px 0px 10px 0px;
+  width: 200px;
+}
+
+.game-cover {
+  width: 100%;
+  height: 180px;
+  background-position: center;
+  background-size: cover;
+  transition: all ease 0.2s;
+}
+
+.game-container p {
+  color: black;
+  font-size: 13px;
+  text-align:center
+}
+
+#adminOpsions{
+  margin-left: 50px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  line-height: 0.7px;
+}
+
+.title{
+  font-weight: 900;
+  font-size: 24px;
+}
+.grid{  
+    display: grid;
+    grid-template-areas: 
+                         "filter       main       main      "
+                         "filter       main       main      "
+    ;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-bottom: 3vh;
+    grid-template-columns: 1fr 7fr;
+    grid-column-gap: 0.5vw;
+}
+#grid-a {
+  grid-area: filter;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 5vh;
+  height: 80vh;
+  border: 1px solid;
+  border-right: 1px solid;
+}
+#grid-b {
+  grid-area: main;
+  border-right: 1px solid white;
+  display: flex;
+  flex-direction: column;
+  padding-left: 1vw;
+  padding-right: 1vw;
+  margin-top: 5vh;
+  height: 80vh;
+}
+.categorias{
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+header {
+  margin: 0;
+  padding: 0;
+  border-bottom: 1px solid;
+}
+#id01{
+  border:1px solid; 
+  align-items: center;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-around; 
+  padding: 7px;
+  position: absolute;
+}
+.noDecoration{
+  text-decoration: none;
+  color: black;
+}

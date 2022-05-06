@@ -14,12 +14,15 @@ class ItemController extends BaseController
     {
         return view('formulario');
     }
-    public function InsertView() 
-    {
-        return view('items-insert');
-    }
     public function InsertProduct()
     {
+        $nome=$this->request->getVar('nome');
+        $preco=$this->request->getVar('preco');
+        $descricao=$this->request->getVar('descricao');
+        $quantidade=$this->request->getVar('quantidade');
+        $console=$this->request->getVar('console');
+        $imagem=$this->request->getVar('imagem');
+        $categoria=$this->request->getVar('categoria');
         $data=[
             'id'=>$this->request->getVar('id'),
             'nome'=>$this->request->getVar('nome'),
@@ -97,5 +100,4 @@ class ItemController extends BaseController
         }
         else echo "Erro";
     }
-    
 }
