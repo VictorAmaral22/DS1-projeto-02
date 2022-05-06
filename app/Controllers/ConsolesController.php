@@ -2,18 +2,18 @@
 
 namespace App\Controllers;
 
-use App\Models\Users;
+
 // use App\Models\Items;
-// use App\Models\Console;
+use App\Models\Console;
 // use App\Models\Categoria;
 
 
-class UsersController extends BaseController
+class ConsolesController extends BaseController
 {
-    public function ViewUsers() {
-        $userModel=new Users();
-        $users = $userModel->get_Users();
-        return view('user-show', ['data'=>$users]);
+    public function getAllConsoles() {
+        $categoriesModel=new Console();
+        $categories = $categoriesModel->get_Items();
+        return view('categoria-all', ['data'=>$categories]);
     }
 
     public function CadastroView() 
@@ -43,10 +43,5 @@ class UsersController extends BaseController
         else{
             echo "ERRO";
         }
-    }
-    public function getEditUser($id){
-        $model=new Users();
-        $data=$model->get_User($id);
-        return view('user-edit',['data'=>$data]);
     }
 }

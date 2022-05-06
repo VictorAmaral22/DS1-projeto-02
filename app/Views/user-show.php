@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChurchGames</title>
+    <link rel="stylesheet" href="css/styles.css">
     <style>
 
 #flex {
@@ -49,7 +50,7 @@
     </style>
 <body style='margin-left:20px'>
 <header>
-    <div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+<div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
         <h1>ChurchGames</h1>
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
@@ -57,47 +58,37 @@
             <a href="/categorias">Categorias</a>
             <a href="/consoles">Consoles</a>
         </div>
-    </div>
+</div>
 </header>
-<main>    
-   <!-- if(user && user.tipo == 1){
-        <a href="games/add" >Cadastrar novo jogo</a>
-    } -->
-    <div style='margin-bottom:20px'>
-        <form method="get" action="/">
-        <select name="filter">
-            <?php 
-             foreach($console as $c) {
-                     echo "<option value=$c[id]>$c[nome]</option>";
-                 }            
+<main>   
+    <div style='display:flex'>
+        <p>Adicionar novo</p> 
+        <a href="/users/create" class="link-plus">
+            <img src="/images/plus.png" class="plus-button-img">
+        </a>
+    </div>
+<?php
+                echo "<table>";
+                echo "<tr>";
+                echo "<td>Nome</td>";
+                echo  "<td>Email</td>";
+                echo  "<td>Data de criação</td>";
+                echo  "<td>Editar</td>";
+                echo "<td>Excluir</td>";
+                echo "</tr>";
+                foreach($data as $row){
+                    echo "<tr>";
+                        echo "<td>".$row['nome'].'</td>';
+                        echo "<td>".$row['email'].'</td>';
+                        echo "<td>".$row['dataregist'].'</td>';
+                        echo "<td><a href='/users/edit/$row[id]'><img src=/images/edit.png class=plus-button-img></a></td>";
+                        echo "<td><a href='/users/delete/$row[id]'><img src=/images/minus.png class=plus-button-img></a></td>";
+                    echo "</tr>";
+                }
+                echo "</table>";
             ?>    
-        </select>
-        <button id="ordenar" type='submit'>Filtrar</button>
-        </form>
-        <form method="get" action="/">
-            <input type="text" name='search'>
-            <button type='submit'>Pesquisar</button>
-        </form>
-    </div>
-    <div id="flex">
-       <?php foreach ($data as $jogo) { ?>
-            <div class="game-container">
-                <div style=" background-image: url('<?php echo $jogo['imagem']?>'); cursor: pointer;" class="game-cover"></div>
-                <div class="column">
-                    <p>Nome: <?php echo $jogo['nome']?></p>
-                    <p>Categoria: <?php echo $jogo['nomeCategoria']?> </p>
-                    <p>Console: <?php echo $jogo['nomeConsole']?></p>
-                    <!-- <p>descrição:<?php echo $jogo['descricao']?></p> -->
-                    <p>Preço: <?php echo $jogo['preco']?></p>
-                    <p>Quantidade: <?php echo $jogo['quantidade']?></p>
-                </div>
-                <?php echo "<a style='margin-right:20px; margin-left:20px' href=/editarProduto/$jogo[id]>Editar</a>"?>
-                <?php echo "<a href=/deletarProduto/$jogo[id]>Remover</a>"?>
-            </div>
-    <?php } ?>
-    </div>
-        
-    </div>
+            <br>
+
 
     <script>
         const select=document.getElementById('select');

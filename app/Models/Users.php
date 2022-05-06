@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use App\Models\Notafiscal;
 
-class Usuario extends Model
+class Users extends Model
 {
     protected $table            = 'usuario';
     protected $primaryKey       = 'id';
