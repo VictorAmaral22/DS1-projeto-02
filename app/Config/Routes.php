@@ -40,6 +40,11 @@ $routes->get('/editarProduto/(:any)', 'ItemController::getEditProduct/$1');
 $routes->post('/editarProduto', 'ItemController::postEditProduct');
 $routes->get('/deletarProduto/(:any)', 'ItemController::deleteProduct/$1');
 
+$routes->get('/users', 'UsersController::ViewUsers');
+$routes->get('/users/add', 'UsersController::InsertView');
+$routes->post('/users/add', 'UsersController::Cadastrar');
+
+
 
 
 $routes->get('/users', 'UsersController::ViewUsers');
