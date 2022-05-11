@@ -12,9 +12,9 @@
         <input type="hidden" name="id" value='<?php echo "$data[id]";?>'>
         Nome: <input type="text" name="nome" value='<?php echo "$data[nome]";?>' >
         <br>
-        email:<input type="text" name="email" value=<?php echo "$data[email]";?>>
+        email:<input type="email" name="email" value=<?php echo "$data[email]";?>>
         <br>
-        senha:<input type="number" name="senha" value=<?php echo "$data[senha]";?>>
+        senha:<input type="text" name="senha" value=<?php echo "$data[senha]";?>>
         <br>
         <input type="submit" value="Enviar">
     </form>

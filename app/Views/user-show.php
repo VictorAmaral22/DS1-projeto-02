@@ -4,49 +4,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChurchGames</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
     <style>
+        #flex {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            margin-left:10px
+        }
 
-#flex {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-    margin-left:10px
-}
+        .game-container {
+            margin: 15px 0px 15px 0px;
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            align-items: center; 
+            text-decoration: none;
+            width: 100%;
+        }
 
-.game-container {
-    margin: 15px 0px 15px 0px;
-    display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center; 
-    text-decoration: none;
-    width: 100%;
-}
+        .game-cover {
+            width: 150px;
+            height: 150px;
+            background-position: center;
+            background-size: cover;
+            transition: all ease 0.2s;
+        }
 
-.game-cover {
-    width: 150px;
-    height: 150px;
-    background-position: center;
-    background-size: cover;
-    transition: all ease 0.2s;
-}
+        .game-container p {
+            color: black;
+            font-size: 15px
+        }
 
-.game-container p {
-    color: black;
-    font-size: 15px
-}
+        #adminOpsions{
+            margin-left: 50px;
+        }
 
-#adminOpsions{
-    margin-left: 50px;
-}
-
-.column {
-    display: flex;
-    flex-direction: column;
-    line-height: 0.7px;
-}
-
+        .column {
+            display: flex;
+            flex-direction: column;
+            line-height: 0.7px;
+        }
     </style>
 <body style='margin-left:20px'>
 <header>
@@ -55,8 +53,8 @@
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
             <a href="/users">Usuarios</a>
-            <a href="/categorias">Categorias</a>
-            <a href="/consoles">Consoles</a>
+            <a href="/categorias/view">Categorias</a>
+            <a href="/consoles/view">Consoles</a>
         </div>
 </div>
 </header>
