@@ -17,6 +17,7 @@
             <a href="/users">Usuarios</a>
             <a href="/categorias">Categorias</a>
             <a href="/consoles">Consoles</a>
+            <a href="/notasfiscais">Notas Fiscais</a>
         </div>
     </div>
 </header>
@@ -38,7 +39,7 @@
         <div>
             <?php 
              foreach($categoria as $c) {
-                     echo "<a class='categorias'  href='/?filter=$c[id]' value=$c[id]>$c[nome]</a> <br>";
+                     echo "<a class='categorias'  href='/?category=$c[id]' value=$c[id]>$c[nome]</a> <br>";
                  }            
             ?>
         </div>
@@ -54,9 +55,9 @@
         <div style='cursor:pointer; align-self:center' onClick="document.getElementById('id01').style.display='flex'">Ordenar</div>
             <div id='id01' style='display:none;'>
             <div onClick="document.getElementById('id01').style.display='none'"  style='align-self:flex-end; cursor:pointer; font-size:20px'>X</div>
-            <a href='' class='noDecoration'>Maior quantidade</a>
-            <a href='' class='noDecoration'>Maiores preços</a>
-            <a href='' class='noDecoration'>Menores Preços</a>
+            <a href='/?order=QuantDesc' class='noDecoration'>Maior quantidade</a>
+            <a href='/?order=PriceDesc' class='noDecoration'>Maiores preços</a>
+            <a href='/?order=PriceAsc' class='noDecoration'>Menores Preços</a>
             </div>
         </div>
     </div>

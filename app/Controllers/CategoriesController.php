@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\Categoria;
 // use App\Models\Items;
 // use App\Models\Console;
-// use App\Models\Categoria;
 
 
 class CategoriesController extends BaseController
@@ -16,32 +15,52 @@ class CategoriesController extends BaseController
         return view('categoria-all', ['data'=>$categories]);
     }
 
-    public function CadastroView() 
+    public function showCreateCategoryForm() 
     {
-        return view('user-insert');
+        return view('categoria-insert');
     }
 
-    public function Cadastrar() 
+    public function createCategory() 
     {
         $nome=$this->request->getVar('nome');
-        $email=$this->request->getVar('email');
-        $senha=$this->request->getVar('senha');
-        $dataregist=$this->request->getVar('dataregist');
-
         $data=[
             'nome'=>$this->request->getVar('nome'),
-            'email'=>$this->request->getVar('email'),
-            'senha'=>$this->request->getVar('senha'),
-            'dataregist'=>$this->request->getVar('dataregist'),
         ];
 
-        $userModel=new Users();
-        $inserted=$userModel->insert_user($data);
+        $userModel=new Categoria();
+        $inserted=$userModel->insert_categoria($data);
         if($inserted){
-            return redirect('/');
+            return redirect('categorias/view');
         }
         else{
             echo "ERRO";
         }
+    }
+
+    public function showEditCategoryForm ($id) {
+        $categoriesModel=new Categoria();
+        $categoria = $categoriesModel->get_Item($id);
+        return view('categoria-edit', ['data'=>$categoria]);
+    }
+    
+    public function editCategory ($id) {
+        $categoriaModel=new Categoria();
+        
+        $edited=$categoriaModel->edit_categoria(['id'=>$id, 'nome'=>$this->request->getVar('nome')]);
+        if($edited) {
+            if (! $this->validate([])) {
+                return redirect('categorias/view');
+            } else {
+                echo view('welcome_message');
+            }
+            
+        }
+    }
+    
+    public function deleteCategory ($id) {
+        $model=new Categoria();
+        $removed=$model->delete_categoria($id);
+        if($removed) return redirect('categorias/view');
+        else echo "Erro";
     }
 }
