@@ -65,7 +65,7 @@ $routes->get('/consoles/delete/(:num)','ConsolesController::deleteConsole/$1');
 $routes->get('/carrinho/view','NotaFiscalController::InsertView');
 $routes->post('/carrinho/view','NotaFiscalController::Insert');
 
-$routes->get('/notasfiscais/view','NotaFiscalController::InsertView');
+$routes->get('/notasfiscais/view','NotaFiscalController::notasFiscaisView');
 
 /*
  * --------------------------------------------------------------------

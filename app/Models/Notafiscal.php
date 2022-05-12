@@ -16,6 +16,12 @@ class Notafiscal extends Model
         $data=$this->findAll();
         return $data;
     }
+    
+    public function get_NotasFiscaisByUser($user)
+    {
+        $data=$this->where('usuario', $user)->findAll();
+        return $data;
+    }
 
     public function insert_notaFiscal($data){
         $inserted = $this->insert($data);

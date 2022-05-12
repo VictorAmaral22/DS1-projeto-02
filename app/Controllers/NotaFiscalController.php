@@ -73,4 +73,25 @@ class NotaFiscalController extends BaseController
             echo "ERRO";
         }
     }
+
+    public function notasFiscaisView() 
+    {
+        $consoleModel=new Console();
+        $console=$consoleModel->get_Items();
+
+        $itensModel=new Items();
+        $itens=$itensModel->get_Items();
+
+        $usersModel=new Users();
+        $users=$usersModel->get_Users();
+
+        $notaFiscalModel = new Notafiscal();
+        $compraProdutosModel = new Compraprodutos();
+        $notasFiscais = $notaFiscalModel->get_NotasFiscais();
+        foreach ($notasFiscais as $nota) {
+            $nota['produtos'] = $compraProdutosModel->get_produtosByCompra($nota['id']);
+        }
+        
+        return view('notafiscal-all', ['consoles' => $console, 'itens' => $itens, 'users' => $users, 'notasFiscais' => $notasFiscais]);
+    }
 }

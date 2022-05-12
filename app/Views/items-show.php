@@ -17,7 +17,7 @@
             <a href="/users/view">Usuarios</a>
             <a href="/categorias/view">Categorias</a>
             <a href="/consoles/view">Consoles</a>
-            <a href="/notasfiscais">Notas Fiscais</a>
+            <a href="/notasfiscais/view">Notas Fiscais</a>
             <a href="/carrinho/view">Carrinho</a>
         </div>
     </div>
