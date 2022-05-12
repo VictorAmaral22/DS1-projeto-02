@@ -25,7 +25,6 @@
    <!-- if(user && user.tipo == 1){
         <a href="games/add" >Cadastrar novo jogo</a>
     } -->
-
     <div class='grid-a'>
     <div class='columm'>
         <h2>Consoles</h2>
