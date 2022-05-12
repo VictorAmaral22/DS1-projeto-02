@@ -9,7 +9,7 @@ class Notafiscal extends Model
     protected $table            = 'notafiscal';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['usuario', 'data'];
+    protected $allowedFields    = ['usuario'];
 
     public function get_NotasFiscais()
     {
