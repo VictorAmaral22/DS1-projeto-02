@@ -37,18 +37,24 @@ class NotaFiscalController extends BaseController
         if($notaFiscal){
             $compraprodutosModel = new Compraprodutos();
 
-            $jogos = [['notafiscal'=>$notaFiscal,'produto'=>3, 'qtd'=>1],['notafiscal'=>$notaFiscal,'produto'=>5, 'qtd'=>2],['notafiscal'=>$notaFiscal,'produto'=>7, 'qtd'=>3]];
+            // $jogos = [['notafiscal'=>$notaFiscal,'produto'=>3, 'qtd'=>1],['notafiscal'=>$notaFiscal,'produto'=>5, 'qtd'=>2],['notafiscal'=>$notaFiscal,'produto'=>7, 'qtd'=>3]];
+            $jogos = [];
 
-            // for ($i=1; $i <= 100; $i++) { 
-            //     if($this->request->getVar("jogo$i")){
-            //         $jogos[] = $this->request->getVar("jogo$i");
-            //     }
-            // }
+            for ($i=1; $i <= 100; $i++) { 
+                if($this->request->getVar("jogo$i") && $this->request->getVar("qtd$i")){
+                    $jogos[] = [
+                        'notafiscal' => $notaFiscal, 
+                        'produto' => $this->request->getVar("jogo$i"),
+                        'qtd' => $this->request->getVar("qtd$i"),
+                    ];
+                }
+            }
             
             $jogosInseridos = [];
             foreach ($jogos as $jogo) {
-                $jogosInseridos[] = $compraprodutosModel->insert_compraProdutos($jogo);
                 $jogoInfo = $itensModel->get_item($jogo['produto']);
+                $jogo['valor'] = $jogoInfo['preco']*$jogo['qtd'];
+                $jogosInseridos[] = $compraprodutosModel->insert_compraProdutos($jogo);
                 $itensModel->edit_item(
                     [
                         'id'=> $jogoInfo['id'],

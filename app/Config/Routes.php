@@ -41,7 +41,7 @@ $routes->get('/editarProduto/(:any)', 'ItemController::getEditProduct/$1');
 $routes->post('/editarProduto', 'ItemController::postEditProduct');
 $routes->get('/deletarProduto/(:any)', 'ItemController::deleteProduct/$1');
 
-$routes->get('/users', 'UsersController::ViewUsers');
+$routes->get('/users/view', 'UsersController::ViewUsers');
 $routes->get('/users/create', 'UsersController::CadastroView');
 $routes->post('/users/create', 'UsersController::Cadastrar');
 $routes->get('/users/edit/(:num)','UsersController::getEditUser/$1');

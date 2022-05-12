@@ -11,24 +11,24 @@
 
 $countJogos = 1;
 
-echo "consoles ";
-print_r($console);
-echo "<br>";
-echo "<br>";
+// echo "consoles ";
+// print_r($console);
+// echo "<br>";
+// echo "<br>";
 
-echo "categoria ";
-print_r($categoria);
-echo "<br>";
-echo "<br>";
+// echo "categoria ";
+// print_r($categoria);
+// echo "<br>";
+// echo "<br>";
 
-echo "itens ";
-print_r($itens);
-echo "<br>";
-echo "<br>";
+// echo "itens ";
+// print_r($itens);
+// echo "<br>";
+// echo "<br>";
 
-echo "users ";
-print_r($users);
-echo "<br>";
+// echo "users ";
+// print_r($users);
+// echo "<br>";
 
 ?>
 
@@ -40,6 +40,9 @@ echo "<br>";
             }
         ?>
     </select>
+
+    <input type="hidden" name="jogo1" value="3">
+    <input type="hidden" name="qtd1" value="1">
 
     <input type="submit" value="Manda">
 
