@@ -57,9 +57,9 @@ REQUISITOS:
         Queries
             - Procurar games por pedaço de nome. (v)
             - Procurar quais games pertencem aquele videogame. (v)
-            - Quais são os games de uma determinada categoria?
-            - Qual é o produto de maior quantidade
-            - qual é o produto mais caro.
+            - Quais são os games de uma determinada categoria? (v)
+            - Qual é o produto de maior quantidade (v)
+            - qual é o produto mais caro. (v)
 
     Produtos
         - View

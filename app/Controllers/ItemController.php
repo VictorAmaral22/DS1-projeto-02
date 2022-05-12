@@ -25,6 +25,13 @@ class ItemController extends BaseController
     }
     public function InsertProduct()
     {
+        $nome=$this->request->getVar('nome');
+        $preco=$this->request->getVar('preco');
+        $descricao=$this->request->getVar('descricao');
+        $quantidade=$this->request->getVar('quantidade');
+        $console=$this->request->getVar('console');
+        $imagem=$this->request->getVar('imagem');
+        $categoria=$this->request->getVar('categoria');
         $data=[
             'id'=>$this->request->getVar('id'),
             'nome'=>$this->request->getVar('nome'),
@@ -52,10 +59,20 @@ class ItemController extends BaseController
         } else if($this->request->getGet('filter')){
             $filter=$this->request->getGet('filter');
             $data=$model->where('console', $filter)->get_Items();
-        } else if($this->request->getGet('order')){
-            // $order=$this->request->getGet('order');
-            // $data=$model->where('console', $order)->get_Items();
-        }
+        } else if($this->request->getGet('category')){
+             $category=$this->request->getGet('category');
+             $data=$model->where('categoria', $category)->get_Items();
+        } else if($this->request->getGet('order') == 'PriceAsc'){
+            $orderPriceAsc=$this->request->getGet('order');
+            $data=$model->orderBy('preco', $orderPriceAsc)->get_Items();
+       }
+       else if($this->request->getGet('order') == 'PriceDesc'){
+            $orderPriceDesc=$this->request->getGet('order');
+            $data=$model->orderBy('preco', 'DESC')->get_Items();
+       }else if($this->request->getGet('order') === 'QuantDesc'){
+            $orderQuant=$this->request->getGet('order');
+            $data=$model->orderBy('quantidade', 'DESC')->get_Items();
+       }
         else {
             $data=$model->get_Items();
         }
@@ -105,5 +122,4 @@ class ItemController extends BaseController
         }
         else echo "Erro";
     }
-    
 }

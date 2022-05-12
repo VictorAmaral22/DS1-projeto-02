@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/styles.css">
     <title>Edit Item</title>
 </head>
-<body style='color:white; font-size:20px'>    
+<body style='font-size:20px'>    
 <form action="/editarProduto" method="post">
 
         <input type="hidden" name="id" value='<?php echo "$data[id]";?>'>
