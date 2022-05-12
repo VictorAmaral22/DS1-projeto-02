@@ -58,7 +58,7 @@
             <a href="/users">Usuarios</a>
             <a href="/categorias/view">Categorias</a>
             <a href="/consoles/view">Consoles</a>            
-<a href="/notasfiscais">Notas Fiscais</a>
+            <a href="/notasfiscais">Notas Fiscais</a>
         </div>
 </div>
 </header>

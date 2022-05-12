@@ -9,32 +9,76 @@
 </head>
 <body style='font-size:20px'>   
     <p>Compra de produtos para cliente.</p>
-    <form action="/adicionarProduto" method="post">
-        <label for="">Cliente
+       
+<?php 
+
+$countJogos = 1;
+echo "consoles ";
+print_r($console);
+echo "<br>";
+echo "<br>";
+
+echo "categoria ";
+print_r($categoria);
+echo "<br>";
+echo "<br>";
+
+echo "itens ";
+print_r($itens);
+echo "<br>";
+echo "<br>";
+
+echo "users ";
+print_r($users);
+echo "<br>";
+?>
+
+<form action="/carrinho/view" method="post">
+    <label for="">Cliente
             <input type="hidden" name="id">
-            <input list='user' type="text" name="user">
-            <datalist type="text" name="user" >
+            <!-- <input list='usuario' type="text" name="usuario"> -->
+            <!-- <datalist type="text" id="usuario" > -->
+            <select>
             <?php 
-            foreach($user as $c) {
-                echo "<option value=$c[id]>$c[nome]</option>";
+            foreach($users as $c) {
+                echo "<option value=$c[id]>$c[email]</option>";
             }
             ?>
-            </datalist>
+            </select>
+            <!-- </datalist> -->
         </label>
         <label for="">Adicionar jogo
             <input type="hidden" name="id">
-            <input list='games' type="text" name="games">
-            <datalist type="text" name="games" >
+            <!-- <input list='games' type="text" name="games"> -->
+            <!-- <datalist type="text" id="games" > -->
+            <select>
             <?php 
-            foreach($games as $c) {
-                echo "<option value=$c[id]>$c[nome] ($c[console])</option>";
+            foreach($itens as $c) {
+                echo "<option class='game$c[id]' value=$c[id]>$c[nome] ($c[nomeConsole])</option>";
             }
             ?>
-            </datalist>
+            
+            <!-- </datalist> -->
+        </select>
         </label>
-        <input type="number" name="quant" maxlength="2">
-        <br>
-        <input type="submit" value="Enviar">
-    </form>
+        <label> Quantidade
+        <input type="number" name="quant" max="2">
+        </label>
+        <button type='button' onclick='addGame()'>adicionar Jogo</button>
+        <div id='games'></div>
+    <input type="submit" value="Manda">
+</form>
+<script>
+    function addGame () {
+  // cria um novo elemento div
+  // e dá à ele conteúdo
+  let divAtual = document.getElementById("games");
+  var game = document.createElement("p");
+  var conteudoNovo = document.createTextNode("Olá, cumprimentos!");
+  divNova.appendChild(conteudoNovo); //adiciona o nó de texto à nova div criada
+
+
+}
+</script>
 </body>
 </html>
