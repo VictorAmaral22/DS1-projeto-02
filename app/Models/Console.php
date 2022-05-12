@@ -21,4 +21,29 @@ class Console extends Model
         $data=$this->find($id);
         return $data;
     }
+
+    public function insert_console($data){
+        $inserted = $this->insert($data);
+        if($inserted) return true;
+        else return false;
+    }
+
+    public function edit_console($data){
+        $trataeddata=[
+            'id'=>$data['id'],
+            'nome'=>$data['nome'],
+        ];
+        
+        $edited=$this->replace($trataeddata);
+
+        if($edited) return true;
+        else return false;
+    }
+    
+    public function delete_console($id)
+    {
+        $removed=$this->delete(['id'=>$id]);
+        if($removed) return true;
+        else return false;
+    }
 }

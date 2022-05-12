@@ -14,10 +14,11 @@
         </div>
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
-            <a href="/users">Usuarios</a>
-            <a href="/categorias">Categorias</a>
-            <a href="/consoles">Consoles</a>
+            <a href="/users/view">Usuarios</a>
+            <a href="/categorias/view">Categorias</a>
+            <a href="/consoles/view">Consoles</a>            
             <a href="/notasfiscais">Notas Fiscais</a>
+
         </div>
     </div>
 </header>
@@ -25,6 +26,7 @@
    <!-- if(user && user.tipo == 1){
         <a href="games/add" >Cadastrar novo jogo</a>
     } -->
+
     <div class='grid-a'>
     <div class='columm'>
         <h2>Consoles</h2>
@@ -44,6 +46,7 @@
             ?>
         </div>
     </div>
+    <a href="/adicionarProduto" >Cadastrar novo jogo</a>
     </div>
  <div class='grid-b'>
     <div style='margin:15px; display:flex; justify-content:space-between; flex:1; width:94%;'>

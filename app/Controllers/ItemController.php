@@ -14,6 +14,15 @@ class ItemController extends BaseController
     {
         return view('formulario');
     }
+    public function InsertView() 
+    {
+        $consoleModel=new Console();
+        $console=$consoleModel->get_Items();
+        $categoriaModel=new Categoria();
+        $categoria=$categoriaModel->get_Items();
+        
+        return view('items-insert', ['console'=>$console, 'categoria'=>$categoria]);
+    }
     public function InsertProduct()
     {
         $nome=$this->request->getVar('nome');

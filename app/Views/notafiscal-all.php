@@ -1,11 +1,10 @@
-<!-- Fazer a tabela e poder editar e remover, e inserir na própria pagina !-->
 <!-- Fazer a tabela e poder editar e remover, e inserir na própria pagina !--><!DOCTYPE html>
 <html lang="en">
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChurchGames</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
 #flex {
     display: flex;
@@ -50,7 +49,7 @@
     </style>
 <body style='margin-left:20px'>
 <header>
-<div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+    <div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
          <div style='display:flex;'>
         <h1>ChurchGames</h1>
         <img src="/images/search.png" class="img-search">
@@ -58,11 +57,10 @@
         <div style="display: flex; width: 40%; justify-content: space-evenly;">
             <a href="/">Jogos</a>
             <a href="/users">Usuarios</a>
-            <a href="/categorias/view">Categorias</a>
-            <a href="/consoles/view">Consoles</a>            
-<a href="/notasfiscais">Notas Fiscais</a>
+            <a href="/categorias">Categorias</a>
+            <a href="/consoles">Consoles</a>
         </div>
-</div>
+    </div>
 </header>
 <main>    
    <!-- if(user && user.tipo == 1){
@@ -72,7 +70,7 @@
         <div align="center">
         <div style='display:flex'>
         <p>Adicionar novo</p> 
-        <a href="/consoles/create" class="link-plus">
+        <a href="/categorias/create" class="link-plus">
             <img src="/images/plus.png" class="plus-button-img">
         </a>
             <?php
@@ -85,15 +83,13 @@
                 foreach($data as $row){
                     echo "<tr>";
                         echo "<td>".$row['nome'].'</td>';
-                        echo "<td><a href='/consoles/edit/$row[id]'><img src=/images/edit.png class=plus-button-img></a></td>";
-                        echo "<td><a href='/consoles/delete/$row[id]'><img src=/images/minus.png class=plus-button-img></a></td>";
+                        echo "<td><a href='/categories/edit/$row[id]'><img src=/images/edit.png class=plus-button-img></a></td>";
+                        echo "<td><a href='/categories/delete/$row[id]'><img src=/images/minus.png class=plus-button-img></a></td>";
                     echo "</tr>";
                 }
                 echo "</table>";
             ?>    
             <br>
-
-    </div>
         </div>
 
         

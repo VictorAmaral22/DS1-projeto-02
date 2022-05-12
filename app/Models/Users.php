@@ -44,7 +44,6 @@ class Users extends Model
             'nome'=>$data['nome'],
             'email'=>$data['email'],
             'senha'=>$data['senha'],
-            'dataregist'=>$data['dataregist'],
         ];
         
         $edited=$this->replace($trataeddata);
