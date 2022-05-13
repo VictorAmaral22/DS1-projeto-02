@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carrinho</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <title>Inserir Item</title>
 </head>
 <body>
 <header>
@@ -24,46 +24,77 @@
         </div>
     </div>
 </header>
+
+<p>Compra de produtos para cliente.</p>
+       
 <?php 
+    $countJogos = 1;
+    echo "consoles ";
+    print_r($console);
+    echo "<br>";
+    echo "<br>";
 
-$countJogos = 1;
+    echo "categoria ";
+    print_r($categoria);
+    echo "<br>";
+    echo "<br>";
 
-// echo "consoles ";
-// print_r($console);
-// echo "<br>";
-// echo "<br>";
+    echo "itens ";
+    print_r($itens);
+    echo "<br>";
+    echo "<br>";
 
-// echo "categoria ";
-// print_r($categoria);
-// echo "<br>";
-// echo "<br>";
-
-// echo "itens ";
-// print_r($itens);
-// echo "<br>";
-// echo "<br>";
-
-// echo "users ";
-// print_r($users);
-// echo "<br>";
-
+    echo "users ";
+    print_r($users);
+    echo "<br>";
 ?>
 
 <form action="/carrinho/view" method="post">
-    <select name="usuario" >
-        <?php 
-            foreach ($users as $element) {
-                echo "<option value='$element[id]'>$element[email]</option>";
+    <label for="">Cliente
+            <input type="hidden" name="id">
+            <!-- <input list='usuario' type="text" name="usuario"> -->
+            <!-- <datalist type="text" id="usuario" > -->
+            <select>
+            <?php 
+            foreach($users as $c) {
+                echo "<option value=$c[id]>$c[email]</option>";
             }
-        ?>
-    </select>
-
-    <input type="hidden" name="jogo1" value="3">
-    <input type="hidden" name="qtd1" value="1">
-
+            ?>
+            </select>
+            <!-- </datalist> -->
+        </label>
+        <label for="">Adicionar jogo
+            <input type="hidden" name="id">
+            <!-- <input list='games' type="text" name="games"> -->
+            <!-- <datalist type="text" id="games" > -->
+            <select>
+            <?php 
+            foreach($itens as $c) {
+                echo "<option class='game$c[id]' value=$c[id]>$c[nome] ($c[nomeConsole])</option>";
+            }
+            ?>
+            
+            <!-- </datalist> -->
+        </select>
+        </label>
+        <label> Quantidade
+        <input type="number" name="quant" max="2">
+        </label>
+        <button type='button' onclick='addGame()'>adicionar Jogo</button>
+        <div id='games'></div>
     <input type="submit" value="Manda">
-
 </form>
+<script>
+    function addGame () {
+  // cria um novo elemento div
+  // e dá à ele conteúdo
+  let divAtual = document.getElementById("games");
+  var game = document.createElement("p");
+  var conteudoNovo = document.createTextNode("Olá, cumprimentos!");
+  divNova.appendChild(conteudoNovo); //adiciona o nó de texto à nova div criada
 
+
+}
+</script>
 </body>
 </html>

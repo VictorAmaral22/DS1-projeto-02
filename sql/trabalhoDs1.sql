@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 29/04/2022 às 16:37
+-- Tempo de geração: 06/05/2022 às 17:42
 -- Versão do servidor: 5.7.24-0ubuntu0.18.04.1
 -- Versão do PHP: 7.3.33-1+ubuntu18.04.1+deb.sury.org+1
 
@@ -103,9 +103,9 @@ CREATE TABLE `jogo` (
 --
 
 INSERT INTO `jogo` (`id`, `nome`, `descricao`, `preco`, `categoria`, `imagem`, `dataregist`, `console`, `quantidade`) VALUES
-(3, 'Grand Theft Auto San Andreas', 'Há 5 anos, Carl Johnson fugiu das pressões da vida em Los Santos, San Andreas... uma cidade que se destruía com gangues, drogas e corrupção, onde estrelas de cinema e milionários fazem o melhor que podem para evitar traficantes e bandidos.', 5, 3, 'https://upload.wikimedia.org/wikipedia/pt/d/d3/Grand_Theft_Auto_San_Andreas_capa.png', '2022-04-29 14:12:13', 7, 10),
-(4, 'Grand Theft Auto V', 'Quando um tratante inexperiente, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com algumas das figuras mais assustadoras e problemáticas do submundo do crime, do governo dos EUA e da indústria do entretenimento, eles precisam realizar uma série de golpes ousados para sobreviver em uma cidade implacável onde não podem confiar em ninguém, nem mesmo um no outro.', 150, 1, 'https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png', '2022-04-29 14:35:30', 3, 20),
-(5, 'Grand Theft Auto V', 'Quando um tratante inexperiente, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com algumas das figuras mais assustadoras e problemáticas do submundo do crime, do governo dos EUA e da indústria do entretenimento, eles precisam realizar uma série de golpes ousados para sobreviver em uma cidade implacável onde não podem confiar em ninguém, nem mesmo um no outro.', 150, 1, 'https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png', '2022-04-29 14:35:21', 5, 50),
+(3, 'Grand Theft Auto San Andreas', 'Há 5 anos, Carl Johnson fugiu das pressões da vida em Los Santos, San Andreas... uma cidade que se destruía com gangues, drogas e corrupção, onde estrelas de cinema e milionários fazem o melhor que podem para evitar traficantes e bandidos.', 45, 3, 'https://upload.wikimedia.org/wikipedia/pt/d/d3/Grand_Theft_Auto_San_Andreas_capa.png', '2022-05-06 15:22:11', 7, 10),
+(4, 'Grand Theft Auto V', 'Quando um tratante inexperiente, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com algumas das figuras mais assustadoras e problemáticas do submundo do crime, do governo dos EUA e da indústria do entretenimento, eles precisam realizar uma série de golpes ousados para sobreviver em uma cidade implacável onde não podem confiar em ninguém, nem mesmo um no outro.', 120, 1, 'https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png', '2022-04-29 16:43:15', 3, 20),
+(5, 'Grand Theft Auto V', 'Quando um tratante inexperiente, um ladrão de bancos aposentado e um psicopata aterrorizante se envolvem com algumas das figuras mais assustadoras e problemáticas do submundo do crime, do governo dos EUA e da indústria do entretenimento, eles precisam realizar uma série de golpes ousados para sobreviver em uma cidade implacável onde não podem confiar em ninguém, nem mesmo um no outro.', 220, 1, 'https://upload.wikimedia.org/wikipedia/pt/8/80/Grand_Theft_Auto_V_capa.png', '2022-04-29 16:41:11', 5, 50),
 (6, 'God of War (2018)', 'Kratos é pai novamente. Como mentor e protetor de Atreus, um filho determinado a ganhar seu respeito, ele é forçado a encarar e controlar a fúria que há muito tempo o define enquanto viaja por um mundo ameaçador com o seu filho.', 200, 1, 'https://cdn1.epicgames.com/offer/3ddd6a590da64e3686042d108968a6b2/EGS_GodofWar_SantaMonicaStudio_S2_1200x1600-fbdf3cbc2980749091d52751ffabb7b7_1200x1600-fbdf3cbc2980749091d52751ffabb7b7', '2022-04-29 14:38:38', 5, 70),
 (7, 'Doom', 'Doom é uma série de jogos eletrônicos de tiro em primeira pessoa desenvolvida pela id Software. A série gira em torno das aventuras de um fuzileiro espacial sem nome que trabalha para o UAC, que luta contra legiões de demônios e mortos - vivos, a fim de sobreviver e posteriormente, na história, salvar a raça humana.', 60, 2, 'https://image.api.playstation.com/vulcan/ap/rnd/202009/2814/GGyEnCkIXoyiVlN9sRHkzUPo.png', '2022-04-29 15:19:17', 3, 5);
 
