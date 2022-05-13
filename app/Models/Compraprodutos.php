@@ -9,7 +9,7 @@ class Compraprodutos extends Model
     protected $table            = 'compraprodutos';
     protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
-    protected $allowedFields    = ['notafiscal','produto', 'qtd'];
+    protected $allowedFields    = ['notafiscal','produto', 'qtd', 'valor'];
 
     public function get_CompraProdutos()
     {

@@ -14,6 +14,15 @@ class ItemController extends BaseController
     {
         return view('formulario');
     }
+    public function InsertView() 
+    {
+        $consoleModel=new Console();
+        $console=$consoleModel->get_Items();
+        $categoriaModel=new Categoria();
+        $categoria=$categoriaModel->get_Items();
+        
+        return view('items-insert', ['console'=>$console, 'categoria'=>$categoria]);
+    }
     public function InsertProduct()
     {
         $nome=$this->request->getVar('nome');
@@ -50,7 +59,20 @@ class ItemController extends BaseController
         } else if($this->request->getGet('filter')){
             $filter=$this->request->getGet('filter');
             $data=$model->where('console', $filter)->get_Items();
-        }
+        } else if($this->request->getGet('category')){
+             $category=$this->request->getGet('category');
+             $data=$model->where('categoria', $category)->get_Items();
+        } else if($this->request->getGet('order') == 'PriceAsc'){
+            $orderPriceAsc=$this->request->getGet('order');
+            $data=$model->orderBy('preco', $orderPriceAsc)->get_Items();
+       }
+       else if($this->request->getGet('order') == 'PriceDesc'){
+            $orderPriceDesc=$this->request->getGet('order');
+            $data=$model->orderBy('preco', 'DESC')->get_Items();
+       }else if($this->request->getGet('order') === 'QuantDesc'){
+            $orderQuant=$this->request->getGet('order');
+            $data=$model->orderBy('quantidade', 'DESC')->get_Items();
+       }
         else {
             $data=$model->get_Items();
         }

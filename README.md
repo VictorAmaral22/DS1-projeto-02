@@ -24,3 +24,50 @@ Usar CSS "bunitinhu" ou bootstrap ou outro.
 ------CÓDIGO ORGANIZADO!!!
 
 Data de Entrega: 06/05
+
+REQUISITOS:
+
+    Users
+        - cadastro (v)
+        - comprar
+        - editar (v)
+        - excluir (v)
+        Queries
+            - Procurar a lista de produtos por usuário e toda a sua ficha e calcular gasto total.
+            - Procurar qual é o usuário que gastou mais?
+
+    Categorias
+        - view (v)
+        - add (v)
+        - edit (v)
+        - delete (v)
+
+    Console
+        - view (v)
+        - add (v)
+        - edit (v)
+        - delete (v)
+
+    Games
+        - View (v)
+        - add (v)
+        - edit (v)
+        - delete (v)
+        - compra
+        Queries
+            - Procurar games por pedaço de nome. (v)
+            - Procurar quais games pertencem aquele videogame. (v)
+            - Quais são os games de uma determinada categoria? (v)
+            - Qual é o produto de maior quantidade (v)
+            - qual é o produto mais caro. (v)
+
+    Produtos
+        - View
+        - add
+        - edit
+        - delete
+        - compra
+        Queries
+            - Procurar itens por pedaço de nome.
+            - Qual é o produto de maior quantidade
+            - qual é o produto mais caro.

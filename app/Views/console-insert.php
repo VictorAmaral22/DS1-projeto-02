@@ -5,9 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/styles.css">
-    <title>Inserir Usuário</title>
+    <title>Inserir Console</title>
 </head>
-<body>
+<body>    
     <header>
         <div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
             <div style='display:flex;'>
@@ -24,12 +24,9 @@
             </div>
         </div>
     </header>
-    <form action="/users/create" method="post" style='font-size:20px'>
+    <form action="/consoles/create" method="post" style='font-size:20px'>
+        <input type="hidden" name="id">
         Nome: <input type="text" name="nome" >
-        <br>
-        Email: <input type="email" name="email">
-        <br>
-        Senha:<input type="password" name="senha">
         <br>
         <input type="submit" value="Enviar">
     </form>
