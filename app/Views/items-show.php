@@ -31,7 +31,7 @@
             <div class='grid-a'>
                 <div class='columm'>
                     <h2>Consoles</h2>
-                    <div >
+                    <div>
                         <?php foreach($console as $c) { 
                             if(isset($_GET['filter']) && $_GET['filter'] == $c['id']) echo "<b><a class='categorias' href='/?filter=$c[id]' value=$c[id]>$c[nome]</a></b> <br>"; 
                             else echo "<a class='categorias' href='/?filter=$c[id]' value=$c[id]>$c[nome]</a> <br>"; 

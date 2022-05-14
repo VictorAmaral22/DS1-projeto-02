@@ -36,7 +36,7 @@ class UsersController extends BaseController
         $userModel=new Users();
         $inserted=$userModel->insert_user($data);
         if($inserted){
-            return redirect('users');
+            return redirect('users/view');
         }
         else{
             echo "ERRO";
@@ -57,7 +57,7 @@ class UsersController extends BaseController
         
         $data = $model->edit_user(['id' => $id, 'nome'=>$nome, 'email'=>$email, 'senha'=>$senha]);
         if($data){
-            return redirect('users');
+            return redirect('users/view');
         } else {
             echo view('welcome_message');
         }
@@ -66,7 +66,7 @@ class UsersController extends BaseController
     public function deleteUser ($id) {
         $model=new Users();
         $removed=$model->delete_user($id);
-        if($removed) return redirect('users');
+        if($removed) return redirect('users/view');
         else echo "Erro";
     }
 }

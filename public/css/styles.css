@@ -145,3 +145,58 @@ header {
   text-decoration: none;
   color: black;
 }
+
+
+.buttonAddGame {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: #fff;
+  text-align: center;
+  justify-content: center;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.gamesCart {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  border-radius: 5px;
+  border: 1px solid black;
+  width: 60%;
+  padding: 1%;
+}
+
+.gameCard {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: #c4c4c4;
+  margin-bottom: 2%;
+}
+
+.gameCardImg {
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.gameCardRemove {
+  border-radius: 5px;
+  border: 1px solid black;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  justify-content: center;
+  padding: 1%;
+  width: 15%;
+  height: 1.5em;
+  cursor: pointer;
+}

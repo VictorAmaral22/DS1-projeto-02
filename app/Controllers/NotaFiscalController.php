@@ -20,7 +20,7 @@ class NotaFiscalController extends BaseController
         $categoria=$categoriaModel->get_Items();
 
         $itensModel=new Items();
-        $itens=$itensModel->get_Items();
+        $itens=$itensModel->get_ItemsInStock();
 
         $usersModel=new Users();
         $users=$usersModel->get_Users();
@@ -49,6 +49,7 @@ class NotaFiscalController extends BaseController
                     ];
                 }
             }
+            print_r($jogos);
             
             $jogosInseridos = [];
             foreach ($jogos as $jogo) {
