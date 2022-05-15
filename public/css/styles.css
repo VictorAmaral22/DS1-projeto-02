@@ -200,3 +200,16 @@ header {
   height: 1.5em;
   cursor: pointer;
 }
+.scrollable{
+  overflow-y: auto;
+  max-height: 600px;
+  width: 40%;
+}
+.alignCenter{
+  display: flex;
+  flex:1;
+  align-items: center;
+  flex-direction: column;
+  max-height: 600px;
+  overflow-y: auto;
+}

@@ -47,6 +47,14 @@ class Items extends Model
         $data=$this->find($id);
         return $data;
     }
+    // public function get_Item_Names($id)
+    // {
+    //     $db      = \Config\Database::connect();
+    //     $builder = $db->table('jogo');
+    //     $builder->select('nome, imagem');
+    //     $query = $builder->getWhere(['id' => $id]);
+    //     return $query;
+    // }
     public function insert_Items($data)
     {
         $inserted=$this->insert($data);

@@ -1,16 +1,16 @@
-<!-- Fazer a tabela e poder editar e remover, e inserir na própria pagina !--><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Notas Fiscais</title>
+    <title>ChurchGames</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body style='margin-left:20px'>
 <header>
-    <div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
-         <div style='display:flex;'>
+<div id="header-title" style="display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+        <div style='display:flex;'>
         <h1>ChurchGames</h1>
         <img src="/images/search.png" class="img-search">
         </div>
@@ -24,9 +24,53 @@
         </div>
     </div>
 </header>
-<main>    
+<main>   
+    <h1>Compras de usuários</h1>
+    <!-- <div style='display:flex'>
+        <p>Adicionar novo</p> 
+        <a href="/users/create" class="link-plus">
+            <img src="/images/plus.png" class="plus-button-img">
+        </a>
+    </div> -->
+    <div style='display:flex'>
+        <?php
+                echo "<div class='scrollable'>";
+                foreach($notasFiscais as $row){
+                        echo "<h2>Usuário de Id: $row[usuario]</h2>";
+                            foreach($row['produtos'] as $product){
+                                echo "<p>Compra $product[id] </p>"; 
+                                echo "<p> Id da Notafical $product[notafiscal]</p>";
+                                echo "<p> Id do produto $product[produto]</p>";
+                                echo "<p> Quantidade $product[qtd]</p>";
+                                echo "<p> Preço $product[valor]</p>";
+                                // echo "<div class=game-cover style='background-image: url('$product[imagem]'); cursor: pointer;'></div>";
+                                // echo "<p>$product[nome]</p>";
+                            }
+                        echo "<h2>Valor total: $row[total]</h2>";
+                }
+                echo "</div>";
+                echo "<div class='alignCenter'>";
+                echo "<h1> Lista de usuários com mais gastos</h1>";
+                echo "<table align=left>";
+                // sort($users,'totalGasto',"DESC");
+                echo "<tr>";
+                echo "<td>Usuário</td>";
+                echo "<td>Gasto total</td>";
+                echo "</tr>";
 
-
+                foreach($users as $row){
+                    echo "<tr>";
+                        echo "<td>".$row['nome'].'</td>';
+                        echo "<td>".$row['totalGasto'].'</td>';
+                    echo "</tr>";
+                }
+                echo "</table>";
+                echo "</div>";
+        ?>    
+    </div>
+            <br>
 </main>
+
 </body>
+
 </html>

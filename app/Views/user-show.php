@@ -91,22 +91,6 @@
                 echo "</table>";
             ?>    
             <br>
-
-
-    <script>
-        const select=document.getElementById('select');
-        const link=document.getElementById('filter-link');
-        select.onchange=()=>{
-            const rota=`/games/?genero=${select.value}`;
-            link.href=rota;
-        }
-        const select2=document.getElementById('data');
-        const link2=document.getElementById('ordenar');
-        select2.onchange=()=>{
-            const rota2=`/games/?data=${select2.value}`;
-            link2.href=rota2;
-        }
-    </script>
     </main>
 
 </body>
