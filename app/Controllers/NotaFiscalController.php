@@ -145,6 +145,6 @@ class NotaFiscalController extends BaseController
             $newNotasFiscais[] = $nota;
         }
         
-        return view('notafiscal-all', ['consoles' => $console, 'itens' => $itens, 'user' => $user, 'notasFiscais' => $newNotasFiscais]);
+        return view('notafiscal-details', ['consoles' => $console, 'itens' => $itens, 'user' => $user, 'notasFiscais' => $newNotasFiscais]);
     }
 }
