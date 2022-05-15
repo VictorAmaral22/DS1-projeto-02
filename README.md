@@ -29,7 +29,7 @@ REQUISITOS:
 
     Users
         - cadastro (v)
-        - comprar
+        - comprar (v)
         - editar (v)
         - excluir (v)
         Queries
@@ -53,7 +53,7 @@ REQUISITOS:
         - add (v)
         - edit (v)
         - delete (v)
-        - compra
+        - compra (v)
         Queries
             - Procurar games por pedaço de nome. (v)
             - Procurar quais games pertencem aquele videogame. (v)

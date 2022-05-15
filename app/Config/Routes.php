@@ -66,6 +66,7 @@ $routes->get('/carrinho/view','NotaFiscalController::InsertView');
 $routes->post('/carrinho/view','NotaFiscalController::Insert');
 
 $routes->get('/notasfiscais/view','NotaFiscalController::notasFiscaisView');
+$routes->get('/notasfiscais/view/(:num)','NotaFiscalController::notasFiscaisUserView/$1');
 
 /*
  * --------------------------------------------------------------------

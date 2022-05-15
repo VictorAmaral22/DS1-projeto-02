@@ -20,7 +20,7 @@ class NotaFiscalController extends BaseController
         $categoria=$categoriaModel->get_Items();
 
         $itensModel=new Items();
-        $itens=$itensModel->get_Items();
+        $itens=$itensModel->get_ItemsInStock();
 
         $usersModel=new Users();
         $users=$usersModel->get_Users();
@@ -49,6 +49,7 @@ class NotaFiscalController extends BaseController
                     ];
                 }
             }
+            print_r($jogos);
             
             $jogosInseridos = [];
             foreach ($jogos as $jogo) {
@@ -84,14 +85,66 @@ class NotaFiscalController extends BaseController
 
         $usersModel=new Users();
         $users=$usersModel->get_Users();
+        $totalPerUser = [];
+        foreach($users as $user){
+            $totalPerUser[$user['id']] = 0;
+        }
 
         $notaFiscalModel = new Notafiscal();
         $compraProdutosModel = new Compraprodutos();
         $notasFiscais = $notaFiscalModel->get_NotasFiscais();
+        $newNotasFiscais = [];
         foreach ($notasFiscais as $nota) {
             $nota['produtos'] = $compraProdutosModel->get_produtosByCompra($nota['id']);
+            $total = 0;
+            
+            foreach($nota['produtos'] as $produto){
+                $nota['produtoInfo'] = $itensModel->get_Item($produto['produto']);
+                $total += $produto['valor'];
+            }
+            $nota['total'] = $total;
+
+            $totalPerUser[$nota['usuario']] += $total;
+            
+            $newNotasFiscais[] = $nota;
+        }
+
+        $newUsers = [];
+        foreach ($users as $user) {
+            $user['totalGasto'] = $totalPerUser[$user['id']];
+            $newUsers[] = $user;
         }
         
-        return view('notafiscal-all', ['consoles' => $console, 'itens' => $itens, 'users' => $users, 'notasFiscais' => $notasFiscais]);
+        return view('notafiscal-all', ['consoles' => $console, 'itens' => $itens, 'users' => $newUsers, 'notasFiscais' => $newNotasFiscais]);
+    }
+    public function notasFiscaisUserView($id) 
+    {
+        $consoleModel=new Console();
+        $console=$consoleModel->get_Items();
+
+        $itensModel=new Items();
+        $itens=$itensModel->get_Items();
+
+        $usersModel=new Users();
+        $user=$usersModel->get_User($id);
+
+        $notaFiscalModel = new Notafiscal();
+        $compraProdutosModel = new Compraprodutos();
+        $notasFiscais = $notaFiscalModel->get_NotasFiscaisByUser($id);
+        $newNotasFiscais = [];
+        foreach ($notasFiscais as $nota) {
+            $nota['produtos'] = $compraProdutosModel->get_produtosByCompra($nota['id']);
+            $total = 0;
+            
+            foreach($nota['produtos'] as $produto){
+                $nota['produtoInfo'] = $itensModel->get_Item($produto['produto']);
+                $total += $produto['valor'];
+            }
+            $nota['total'] = $total;
+            
+            $newNotasFiscais[] = $nota;
+        }
+        
+        return view('notafiscal-all', ['consoles' => $console, 'itens' => $itens, 'user' => $user, 'notasFiscais' => $newNotasFiscais]);
     }
 }
