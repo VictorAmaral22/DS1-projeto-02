@@ -36,17 +36,26 @@
         <?php
                 echo "<div class='scrollable'>";
                 foreach($notasFiscais as $row){
-                        echo "<h2>Usuário de Id: $row[usuario]</h2>";
+                        echo "<div class=\"notaContainer\">";
+                        echo "<div>";
+                        echo "<h2>Usuário: "; 
+                        foreach ($users as $user) {
+                            if($row['usuario'] == $user['id']) echo $user['email'];
+                        }
+                        echo "</h2>";
+                        echo "<h3>Nota Fiscal: $row[id]</h3>";
+                        echo "<h3>Data: $row[data]</h3>";
+                        echo "</div>";
                             foreach($row['produtos'] as $product){
-                                echo "<p>Compra $product[id] </p>"; 
-                                echo "<p> Id da Notafical $product[notafiscal]</p>";
-                                echo "<p> Id do produto $product[produto]</p>";
-                                echo "<p> Quantidade $product[qtd]</p>";
-                                echo "<p> Preço $product[valor]</p>";
-                                // echo "<div class=game-cover style='background-image: url('$product[imagem]'); cursor: pointer;'></div>";
-                                // echo "<p>$product[nome]</p>";
+                                echo "<div class=\"produtoInfo\">";
+                                echo "<p> Código: $product[produto]</p>";
+                                echo "<p> ".$product['produtoInfo']['nome']." (".$product['produtoInfo']['nomeConsole'].")</p>";
+                                echo "<p> $product[qtd]x </p>";
+                                echo "<p> R$ $product[valor]</p>";
+                                echo "</div>";
                             }
-                        echo "<h2>Valor total: $row[total]</h2>";
+                        echo "<h2>Valor total: R$ $row[total]</h2>";
+                        echo "</div>";
                 }
                 echo "</div>";
                 echo "<div class='alignCenter'>";
@@ -61,7 +70,7 @@
                 foreach($users as $row){
                     echo "<tr>";
                         echo "<td>".$row['nome'].'</td>';
-                        echo "<td>".$row['totalGasto'].'</td>';
+                        echo "<td>R$ ".$row['totalGasto'].'</td>';
                     echo "</tr>";
                 }
                 echo "</table>";

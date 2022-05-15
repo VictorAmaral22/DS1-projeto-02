@@ -44,7 +44,10 @@ class Items extends Model
     
     public function get_Item($id)
     {
+        $console=new Console();
         $data=$this->find($id);
+        $data['nomeConsole'] = $console->get_Item($data['console'])['nome'];
+        
         return $data;
     }
     // public function get_Item_Names($id)

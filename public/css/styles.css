@@ -202,8 +202,11 @@ header {
 }
 .scrollable{
   overflow-y: auto;
-  max-height: 600px;
+  max-height: 700px;
   width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .alignCenter{
   display: flex;
@@ -212,4 +215,22 @@ header {
   flex-direction: column;
   max-height: 600px;
   overflow-y: auto;
+}
+
+.notaContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid black;
+  margin-bottom: 3%;
+  width: 70%;
+  padding: 3%;
+  border-radius: 5px;
+}
+
+.produtoInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom: 1px dashed black;
 }
