@@ -36,7 +36,6 @@ $routes->get('/', 'ItemController::index');
 $routes->get('/adicionarProduto', 'ItemController::InsertView');
 $routes->post('/adicionarProduto', 'ItemController::InsertProduct');
 $routes->post('/adicionarCliente', 'ItemController::InsertClient');
-$routes->get('/verListagem', 'ItemController::showRegisterForm');
 $routes->get('/editarProduto/(:any)', 'ItemController::getEditProduct/$1');
 $routes->post('/editarProduto', 'ItemController::postEditProduct');
 $routes->get('/deletarProduto/(:any)', 'ItemController::deleteProduct/$1');

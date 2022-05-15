@@ -30,11 +30,12 @@
     } -->
     <div>
         <div align="center">
-        <div style='display:flex'>
+        <div style='display:flex, flex:1, align-items:center'>
         <p>Adicionar novo</p> 
         <a href="/consoles/create" class="link-plus">
             <img src="/images/plus.png" class="plus-button-img">
-        </a>
+        </a> 
+    </div>
             <?php
                 echo "<table>";
                 echo "<tr>";
@@ -53,7 +54,6 @@
             ?>    
             <br>
 
-    </div>
         </div>
 
         

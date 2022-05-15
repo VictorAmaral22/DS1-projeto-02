@@ -10,10 +10,6 @@ use App\Models\Categoria;
 
 class ItemController extends BaseController
 {
-    public function showRegisterForm()
-    {
-        return view('formulario');
-    }
     public function InsertView() 
     {
         $consoleModel=new Console();

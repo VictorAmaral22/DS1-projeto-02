@@ -63,8 +63,8 @@
         </div>
     </div>
 </header>
-<main>   
-    <div style='display:flex'>
+<main align="center">   
+    <div style='display:flex, flex:1, align-items:center'>
         <p>Adicionar novo</p> 
         <a href="/users/create" class="link-plus">
             <img src="/images/plus.png" class="plus-button-img">
