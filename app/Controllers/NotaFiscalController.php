@@ -98,10 +98,13 @@ class NotaFiscalController extends BaseController
             $nota['produtos'] = $compraProdutosModel->get_produtosByCompra($nota['id']);
             $total = 0;
             
+            $tmpProdutos = [];
             foreach($nota['produtos'] as $produto){
-                $nota['produtoInfo'] = $itensModel->get_Item($produto['produto']);
+                $produto['produtoInfo'] = $itensModel->get_Item($produto['produto']);
+                $tmpProdutos[] = $produto;
                 $total += $produto['valor'];
             }
+            $nota['produtos'] = $tmpProdutos;
             $nota['total'] = $total;
 
             $totalPerUser[$nota['usuario']] += $total;

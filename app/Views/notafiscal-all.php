@@ -27,16 +27,6 @@
 <main>    
 
 
-<?php 
-    foreach($notasFiscais as $nota){
-        // print_r($nota);
-        // echo "<br>";
-    }
-    print_r($users);
-    // print_r($notasFiscais);
-   
-?>
-
 </main>
 </body>
 </html>
